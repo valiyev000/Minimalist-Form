@@ -1,0 +1,19 @@
+{
+  "surveys": [
+    {
+      "name": "Agabey",
+      "surname": "Valiyev",
+      "id": "0+Agabey"
+    },
+    {
+      "name": "Fuad",
+      "surname": "Suleymanli",
+      "id": "1+Fuad"
+    },
+    {
+      "name": "Arzu",
+      "surname": "/",
+      "id": "2+Arzu"
+    }
+  ]
+}
