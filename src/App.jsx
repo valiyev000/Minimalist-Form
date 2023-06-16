@@ -57,6 +57,10 @@ function App() {
   }
 
 
+  function toCopy(name,surname) {
+    navigator.clipboard.writeText(`${name} ${surname}`)
+  }
+
 
 
   return (
@@ -115,7 +119,7 @@ function App() {
               <div className="surname">Surname: {e.surname}</div>
               <div className="del-icon-div" onClick={()=>deleteSurvey(e.id)}><img src={delIcon} alt="delete-icon" /></div>
               <div className="for-copy">{`${e.name} ${e.surname}`}</div> {/* visibility hidden verilib */}
-              <div className="copied">Copied</div>
+              <div className="copied" onClick={(e)=>{toCopy(e.name,e.surname); console.log(e)}}>Copied</div>
             </div>
           )
         })}
