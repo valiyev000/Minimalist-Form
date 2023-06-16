@@ -61,6 +61,12 @@ function App() {
     navigator.clipboard.writeText(`${name} ${surname}`)
   }
 
+  const [clickedSurveyId, setClickedSurveyId] = useState()
+
+  function copyTextChanger(id) {
+    setClickedSurveyId(id)
+  }
+
 
 
   return (
@@ -114,12 +120,11 @@ function App() {
       <section className='historySection'>
         {mainData.map((e, i) => {
           return (
-            <div className="survey" key={e.id}>
+            <div className="survey" key={e.id} onClick={()=>{copyTextChanger(e.id); toCopy(e.name,e.surname)}}>
               <div className="name">Name: {e.name}</div>
               <div className="surname">Surname: {e.surname}</div>
-              <div className="del-icon-div" onClick={()=>deleteSurvey(e.id)}><img src={delIcon} alt="delete-icon" /></div>
-              <div className="for-copy">{`${e.name} ${e.surname}`}</div> {/* visibility hidden verilib */}
-              <div className="copied" onClick={(e)=>{toCopy(e.name,e.surname); console.log(e)}}>Copied</div>
+              <div className="del-icon-div" onClick={(event)=>{ event.stopPropagation(); deleteSurvey(e.id)}}><img src={delIcon} alt="delete-icon" /></div>
+              <div className="copied">{e.id === clickedSurveyId ? "Copied" : "Copy"}</div>
             </div>
           )
         })}
