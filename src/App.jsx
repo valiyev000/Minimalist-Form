@@ -18,7 +18,7 @@ function App() {
     document.title="Oh well... U r back))"
 
     setTimeout(() => {
-      document.title="Simple Form"
+      document.title="Minimalist Form"
     }, 2000);
   })
 
